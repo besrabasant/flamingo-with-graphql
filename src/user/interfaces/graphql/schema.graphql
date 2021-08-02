@@ -1,0 +1,14 @@
+type User {
+    name: String!
+    nicknames: [String!]
+    attributes: User_Attributes!
+}
+
+type User_Attributes {
+    keys: [String!]!
+    get(key: String!): String!
+}
+
+extend type Query {
+    User(id: String!): User
+}
