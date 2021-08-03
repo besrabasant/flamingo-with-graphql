@@ -1,8 +1,9 @@
 package graphql
 
 import (
-	"flamingo.me/graphql"
 	"flamingo.me/flamingo-app/src/user/domain"
+	"flamingo.me/flamingo-app/src/utils"
+	"flamingo.me/graphql"
 )
 
 //go:generate go run github.com/go-bindata/go-bindata/v3/go-bindata -nometadata -o fs.go -pkg graphql schema.graphql
@@ -12,7 +13,7 @@ type Service struct{}
 
 // Schema defines the graphql schema
 func (*Service) Schema() []byte {
-	return MustAsset("schema.graphql")
+	return utils.MustAsset("schema.graphql")
 }
 
 // Types set up the GraphQL to Go Type mappings

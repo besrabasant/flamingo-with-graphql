@@ -2,9 +2,19 @@ package infrastructure
 
 import (
 	"context"
+	"time"
 
 	"flamingo.me/flamingo-app/src/user/domain"
 )
+
+type User struct {
+	ID           uint
+	Name         string
+	EmailAddress *string
+	ApprovedAt   time.Time
+	CreatedAt    time.Time
+	UpdatedAt    time.Time
+}
 
 // UserServiceImpl default implementation
 type UserServiceImpl struct{}
